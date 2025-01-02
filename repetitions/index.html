@@ -1,14 +1,27 @@
-<!--fjärde sidan-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Numbers::Remove</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <a href="../index.html">home</a>
+    <header>
+        <nav>
+            <a id="home-link" href="../index.html">Home</a>
+        </nav>
+        <div class="input-controls">
+            <h1>How many numbers in the grid?</h1>
+            <input type="text" id="cell-count" placeholder="">
+            <button id="create-grid">Create</button>
+        </div>
+    </header>
+    <main>
+        <div id="grid-container"></div>
+    </main>
+    <script src="../common.js"></script>
+    <script src="index.js"></script>
 </body>
-<style>a{text-align: center; font-size: 25px;}</style>
 </html>
