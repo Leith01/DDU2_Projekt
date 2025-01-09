@@ -49,14 +49,13 @@ header h1 {
 
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(19, 1fr);
     gap: 5px;
-    max-width: 600px;
     margin-top: 20px;
     /*visibility: hidden;*/;   
 }
 
-#grid-container .cell {
+#grid-container .grid-cell {
     width: 50px;
     height: 50px;
     background-color: #ddd;
