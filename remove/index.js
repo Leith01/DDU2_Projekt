@@ -6,33 +6,43 @@ const removedNumberDisplay = document.getElementById("removedNumber");
 let selectedNumber = null;
 
 newRandomNumberButton.addEventListener("click", function () {
+    removedNumberDisplay.textContent = "-";
+
+    const randomNumber = Math.floor(Math.random() * 99) + 1;
+    selectedNumber = randomNumber;
+    randomNumberDisplay.textContent = randomNumber
+
     const cells = document.getElementsByClassName("grid-cell");
-    const availableCells = [];
-
     for (let cell of cells) {
-        if (cell.textContent !== "X") {
-            availableCells.push(cell);
+        if (Number(cell.textContent) === randomNumber) {
+            cell.style.backgroundColor = "orange";
+        } else if (cell.textContent !== "X") {
+            cell.style.backgroundColor = "";
         }
-    }
-
-    if (availableCells.length > 0) {
-        const randomIndex = Math.floor(Math.random() * availableCells.length);
-        selectedNumber = availableCells[randomIndex].textContent;
-        randomNumberDisplay.textContent = selectedNumber;
     }
 }); 
 
 removeButton.addEventListener("click", function() {
-    const cells = document.getElementsByClassName("grid-cell");
-    let found = false;
+    if(selectedNumber === null) {
+        removedNumberDisplay.textContent = "No number selected";
+        return;
+    }
 
-    for (let cell of cells) {
-        if (cell.textContent === selectedNumber) {
+    const cells = document.getElementsByClassName("grid-cell");
+    let count = 0;
+
+    for (const cell of cells) {
+        if (cell.textContent == selectedNumber) {
             cell.textContent = "X";
-            removedNumberDisplay.textContent = selectedNumber;
-            found = true;
-            break;
+            cell.style.backgroundColor = "red";
+            count++;
         }
+    }
+
+    if (count > 0) {
+        removedNumberDisplay.textContent = selectedNumber + " removed " + count + " time" + (count > 1 ? "s" : "");
+    } else {
+        removedNumberDisplay.textContent = selectedNumber + " nothing removed";
     }
 
     selectedNumber = null;
