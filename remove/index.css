@@ -1,0 +1,24 @@
+.remove-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#randomNumber {
+    height: 12px;
+    width: 60px;
+    line-height: 12px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#removedNumber {
+    height: 12px;
+    width: 250px;
+    line-height: 12px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
