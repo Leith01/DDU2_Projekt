@@ -1,9 +1,24 @@
 .sumOfAll,
-.sumofMarked {
+.sumOfMarked {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+
+#sumAmount,
+#markedAmount {
+    height: 16px;
+    width: 100px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#resetButton {
+    padding: 4px 8px;
+    font: 14px;
 }
 
 p {

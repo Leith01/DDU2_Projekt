@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const sumAmount = document.getElementById("sumAmount");
     const gridContainer = document.getElementById("grid-container");
+    const markedAmount = document.getElementById("markedAmount");
+    const resetButton = document.getElementById("resetButton");
 
     let markedCells = [];
 
@@ -15,6 +17,25 @@ document.addEventListener("DOMContentLoaded", function() {
         sumAmount.textContent = totalSum;
     }
 
+    function calculateMarkedSum() {
+        let markedSum = 0;
+
+        for (let cell of markedCells) {
+            markedSum += cell.textContent - 0;
+        }
+
+        markedAmount.textContent = markedSum;
+    }
+
+    function resetMarkedCells() {
+        for (let cell of markedCells) {
+            cell.style.backgroundColor = "";
+        }
+
+        markedCells = [];
+        markedAmount.textContent = "-";
+    }
+
     gridContainer.addEventListener("click", function(event) {
         if (event.target.classList.contains("grid-cell")) {
             const cell = event.target;
@@ -24,11 +45,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 markedCells.push(cell);
             }
+
+            calculateMarkedSum();
         }
+    });
+
+    resetButton.addEventListener("click", function() {
+        resetMarkedCells();
     });
 
     const createGridButton = document.getElementById("create-grid");
     createGridButton.addEventListener("click", function() {
+        resetMarkedCells();
         calculateSum();
     });
 
