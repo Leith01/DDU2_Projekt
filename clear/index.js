@@ -19,8 +19,19 @@ gridContainer.addEventListener("mouseout", function(event) {
 });
 
 gridContainer.addEventListener("click", function(event) {
-    if (event.target.className === "grid-cell") {
-        event.target.style.backgroundColor = "red";
-        event.target.textContent = "";
+    const clickedCell = event.target;
+
+    if (clickedCell.className === "grid-cell") {
+        console.log("cell clicked");
+
+        if (clickedCell.className === "grid-cell") {
+            if (clickedCell.style.backgroundColor === "red") {
+                clickedCell.style.backgroundColor = "";
+                clickedCell.textContent = getRandomNumber();
+            } else {
+                clickedCell.style.backgroundColor = "red";
+                clickedCell.textContent = "";
+            }
+        }
     }
 });
