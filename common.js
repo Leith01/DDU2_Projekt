@@ -13,6 +13,10 @@ function fillGrid(gridElement, numberOfCells) {
     }
 }
 
+function getGridCells(gridElement) {
+    return gridElement.querySelector(".grid-cell");
+}
+
 function getRandomNumber() {
     return Math.floor(Math.random() * 100) + 1;
 }

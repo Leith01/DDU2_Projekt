@@ -50,6 +50,67 @@ function updateRepeatedNumbers() {
     }
 }
 
+function updateMissinNumbers() {
+    const cells = document.querySelectorAll(".grid-cell");
+
+    const allNumbers = [];
+    for (let i = 1; i <= 99; i++) {
+        allNumbers.push(i);
+    }
+
+    const numbersInGrid = [];
+    for (let cell of cells) {
+        const number = cell.textContent;
+        if (number) {
+            let exists = false;
+            for (let num of numbersInGrid) {
+                if (num === number) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                numbersInGrid.push(number);
+            }
+        }
+    }
+
+    const missingNumbers = [];
+    for (let num of allNumbers) {
+        const currentNumber = "" + num;
+        let found = false;
+
+        for (let gridNum of numbersInGrid) {
+            if (gridNum === currentNumber) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            missingNumbers.push(currentNumber);
+        }
+    }
+    
+    if (missingNumbers.length > 0) {
+        let missingText = "";
+        let first  = true;
+
+        for (let missingNum of missingNumbers) {
+            if (!first) {
+                missingText += ", ";
+            }
+            missingText += missingNum;
+            first = false;
+        }
+
+        numbersNotInPlace.textContent = missingText;
+    } else {
+        numbersNotInPlace.textContent = "-";
+    }
+}
+
+
 createGridButton.addEventListener("click", function () {
     updateRepeatedNumbers();
-})
+    updateMissinNumbers();
+});
