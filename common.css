@@ -52,7 +52,6 @@ header {
     grid-template-columns: repeat(19, 1fr);
     gap: 5px;
     margin-top: 20px;
-    /*visibility: hidden;*/;   
 }
 
 #grid-container .grid-cell {
