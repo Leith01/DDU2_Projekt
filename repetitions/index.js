@@ -50,9 +50,26 @@ function updateRepeatedNumbers() {
     }
 }
 
+function highlightMostRepeatedNumbers() {
+    const cells = document.querySelectorAll(".grid-cell");
+    const {mostRepeated} = getMostRepeatedNumbers(cells);
+
+    for (let cell of cells) {
+        cell.style.backgroundColor = "";
+    }
+
+    for (let cell of cells) {
+        for (let repeated of mostRepeated) {
+            if (cell.textContent === repeated) {
+                cell.style.backgroundColor = "turquoise";
+                break;
+            }
+        }
+    }
+}
+
 function updateMissinNumbers() {
     const cells = document.querySelectorAll(".grid-cell");
-
     const allNumbers = [];
     for (let i = 1; i <= 99; i++) {
         allNumbers.push(i);
@@ -113,4 +130,5 @@ function updateMissinNumbers() {
 createGridButton.addEventListener("click", function () {
     updateRepeatedNumbers();
     updateMissinNumbers();
+    highlightMostRepeatedNumbers();
 });
