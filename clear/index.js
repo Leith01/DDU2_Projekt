@@ -25,13 +25,24 @@ gridContainer.addEventListener("click", function(event) {
         console.log("cell clicked");
 
         if (clickedCell.className === "grid-cell") {
-            if (clickedCell.style.backgroundColor === "red") {
+            if (clickedCell.style.backgroundColor === "orange") {
                 clickedCell.style.backgroundColor = "";
                 clickedCell.textContent = getRandomNumber();
             } else {
                 clickedCell.style.backgroundColor = "red";
                 clickedCell.textContent = "";
             }
+        }
+    }
+});
+
+fillCleared.addEventListener("click", function() {
+    const gridCells = document.querySelectorAll(".grid-cell");
+
+    for (const cell of gridCells) {
+        if (cell.style.backgroundColor === "red") {
+            cell.style.backgroundColor = ""; 
+            cell.textContent = getRandomNumber(); 
         }
     }
 });
