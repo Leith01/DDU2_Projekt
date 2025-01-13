@@ -6,4 +6,6 @@ main {
     height: 40px;
     width: 90px;
     border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
 }
