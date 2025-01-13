@@ -1,0 +1,25 @@
+
+.mostRepeatedNumbers,
+.numbersNotInPlace {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+#repeatedAmount {
+    height: 12px;
+    width: 400px;
+    line-height: 12px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#numbers {
+    height: auto;
+    width: 400px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
