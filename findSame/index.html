@@ -6,6 +6,7 @@
     <title>Numbers::Find same</title>
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../fonts.css">
 </head>
 <body>
     <nav>
@@ -17,8 +18,10 @@
             <input type="text" id="cell-count" placeholder="">
             <button id="create-grid">Create</button>
         </div>
-        <p id="showCopies">Click on a number to find copies</p>
-        <button id="ResetButton">Reset</button>
+        <div class="copiesSection">
+            <p id="showCopies">Click on a number to find copies</p>
+            <button id="resetButton">Reset</button>
+        </div>
         <div id="grid-container"></div>
     </main>
     <script src="../common.js"></script>

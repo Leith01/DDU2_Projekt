@@ -1,3 +1,13 @@
+* {
+    font-family: BC-Regular;
+}
+
+#webLinks{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
 #home-link {
     margin-top: 10px;
     font-size: 20px;
@@ -45,6 +55,7 @@ header {
 #create-grid {
     padding: 5px 10px;
     font-size: 16px;
+    font-weight: bold;
 }
 
 #grid-container {
@@ -62,4 +73,5 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    cursor: pointer;
 }

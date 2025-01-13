@@ -1,5 +1,5 @@
 const showCopies = document.getElementById("showCopies");
-const resetButton = document.getElementById("ResetButton");
+const resetButton = document.getElementById("resetButton");
 let previouslyClickedValue = null;
 
 gridContainer.addEventListener("click", function(event) {

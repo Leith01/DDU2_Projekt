@@ -8,3 +8,16 @@ main {
     gap: 10px;
     justify-content: center;
 }
+
+#addUpToNum {
+    text-align: center;
+    font-size: 15px;
+}
+
+#addUpTo {
+    font-size: 20px;
+}
+
+#findTwoCells {
+    font-size: 15px;
+}

@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const cells = gridContainer.getElementsByClassName("grid-cell");
         let totalSum = 0;
 
+        if (cells.length === 0) {
+            sumAmount.textContent = "-";
+            return;
+        }
+
         for (let cell of cells) {
             totalSum += cell.textContent - 0; //omvandlar textinnehåll till tal genom att subrathera med 0
         }

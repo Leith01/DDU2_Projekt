@@ -21,7 +21,8 @@
 
 #resetButton {
     padding: 4px 8px;
-    font: 14px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 p {

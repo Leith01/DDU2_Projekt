@@ -57,7 +57,7 @@ removeButton.addEventListener("click", function() {
     if (count > 0) {
         removedNumberDisplay.textContent = selectedNumber + " removed " + count + " time" + (count > 1 ? "s" : "");
     } else {
-        removedNumberDisplay.textContent = selectedNumber + " nothing removed";
+        removedNumberDisplay.textContent = " nothing removed";
     }
 
     selectedNumber = null;
