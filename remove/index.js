@@ -5,6 +5,21 @@ const removedNumberDisplay = document.getElementById("removedNumber");
 
 let selectedNumber = null;
 
+gridContainer.addEventListener("mouseover", function(event) {
+    if (event.target.className === "grid-cell") {
+        event.target.style.backgroundColor = "orange";
+    }
+    
+});
+
+gridContainer.addEventListener("mouseout", function(event) {
+    if (event.target.className === "grid-cell") {
+        if (event.target.style.backgroundColor === "orange") {
+            event.target.style.backgroundColor = ""; 
+        }
+    }
+});
+
 newRandomNumberButton.addEventListener("click", function () {
     removedNumberDisplay.textContent = "-";
 
