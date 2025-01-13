@@ -6,6 +6,9 @@
     gap: 10px;
 }
 
+.sumOfAll {
+    height: 20px;
+}
 
 #sumAmount,
 #markedAmount {
